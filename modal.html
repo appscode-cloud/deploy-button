@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Deploy button</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Deploy button</title>
 
-  <script text="javascript" src="./deploy-button.js"></script>
-</head>
-<body>
-  <div id="ac-bb-deploy"></div>
-  <script>initDeployBtn("#ac-bb-deploy")</script>
-</body>
-
+    <script text="javascript" src="./public/js/bundle.js"></script>
+  </head>
+  <body>
+    <div id="ac-bb-deploy"></div>
+    <script>
+      window.onload = function() {
+        DbbButton.initialize("#ac-bb-deploy");
+      };
+    </script>
+  </body>
 </html>
