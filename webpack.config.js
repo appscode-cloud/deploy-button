@@ -1,13 +1,17 @@
 const path = require("path");
+const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 
 module.exports = {
-  mode: 'development',
+  mode: "production",
   entry: "./src/js/index.js",
   output: {
     path: path.resolve(__dirname, "public/js"),
     filename: "bundle.js",
     libraryTarget: "var",
     library: "DbbButton"
+  },
+  optimization: {
+    minimizer: [new UglifyJsPlugin()]
   },
   module: {
     rules: [
