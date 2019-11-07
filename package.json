@@ -1,6 +1,6 @@
 {
-  "name": "deploy-with-bytebuilders-button",
-  "version": "1.0.0",
+  "name": "@bytebuilders/deploy-button",
+  "version": "0.0.1",
   "description": "",
   "main": "deploy-button.js",
   "scripts": {
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/appscode-cloud/deploy-with-bytebuilders-button.git"
+    "url": "git+https://github.com/bytebuilders/deploy-button.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/appscode-cloud/deploy-with-bytebuilders-button/issues"
+    "url": "https://github.com/bytebuilders/deploy-button/issues"
   },
-  "homepage": "https://github.com/appscode-cloud/deploy-with-bytebuilders-button#readme",
+  "homepage": "https://github.com/bytebuilders/deploy-button#readme",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
