@@ -51,7 +51,8 @@ export function addStyles(
     margin: '0 auto',
     maxHeight: 'calc(100vh - 20px)',
     width: '60%',
-    overflow: 'auto',
+    overflowY: 'auto',
+    overflowX: 'hidden',
     position: 'relative',
   });
 
