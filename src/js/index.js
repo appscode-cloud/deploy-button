@@ -10,7 +10,7 @@ export function initialize(ref) {
     <div class="ac-bb-modal-background"></div>
     <div class="ac-bb-modal-content">
       <div class="ac-bb-box">
-        <iframe class="ac-iframe" src="http://deploy.bb.test:5994/?product=kubedb&owner=system-admin" width="100%" height="900"></iframe>
+        <iframe class="ac-iframe" src="http://deploy.bb.test:5994/?product=kubedb&owner=system-admin" width="100%" height="800"></iframe>
       </div>
     </div>
     <button class="ac-bb-modal-close">X</button>
@@ -22,11 +22,12 @@ export function initialize(ref) {
   const acModalBg = document.querySelector('.ac-bb-modal-background');
   const acModalContent = document.querySelector('.ac-bb-modal-content');
   const acModalBox = document.querySelector('.ac-bb-box');
+
   const acModalClose = document.querySelector('.ac-bb-modal-close');
   // const acModalIframe = document.querySelector(".ac-iframe");
 
   // add functionality
-  addEventListeners(btn, acModal, acModalClose);
+  addEventListeners(btn, acModal, acModalBox, acModalClose);
 
   // add styles
   addStyles(btn, acModal, acModalBg, acModalContent, acModalBox, acModalClose);

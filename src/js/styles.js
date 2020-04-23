@@ -50,7 +50,7 @@ export function addStyles(
   css(acModalContent, {
     margin: '0 auto',
     maxHeight: 'calc(100vh - 20px)',
-    width: '80%',
+    width: '60%',
     overflow: 'auto',
     position: 'relative',
   });
@@ -66,11 +66,9 @@ export function addStyles(
 
   css(acModalClose, {
     position: 'absolute',
-    right: '40px',
-    top: '40px',
     backgroundColor: 'transparent',
     borderColor: 'transparent',
-    color: '#fff',
+    color: '#74818D',
     fontSize: '22px',
     cursor: 'pointer',
   });
