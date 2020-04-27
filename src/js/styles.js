@@ -7,6 +7,7 @@ export function css(el, styles) {
 
 export function addStyles(
   btn,
+  btnIcon,
   acModal,
   acModalBg,
   acModalContent,
@@ -14,14 +15,22 @@ export function addStyles(
   acModalClose,
 ) {
   css(btn, {
-    backgroundColor: '#4CAF50' /* Green */,
-    border: 'none',
-    color: 'white',
-    padding: '15px 32px',
+    backgroundColor: '#fff',
+    border: '1px solid #003466',
+    borderRadius: '4px',
+    color: '#003466',
+    padding: '10px 15px',
+    minHeight: '65px',
     textAlign: 'center',
     textDecoration: 'none',
+    fontWeight: 'bold',
     display: 'inline-block',
-    fontSize: '16px',
+    fontSize: '20px',
+  });
+
+  css(btnIcon, {
+    verticalAlign: 'middle',
+    marginRight: '10px',
   });
 
   css(acModal, {
@@ -49,9 +58,10 @@ export function addStyles(
 
   css(acModalContent, {
     margin: '0 auto',
-    maxHeight: 'calc(100vh - 20px)',
+    maxHeight: 'calc(100vh - 0px)',
     width: '60%',
-    overflow: 'auto',
+    overflowY: 'auto',
+    overflowX: 'hidden',
     position: 'relative',
   });
 
