@@ -12,7 +12,6 @@ export function addStyles(
   acModalBg,
   acModalContent,
   acModalBox,
-  acModalClose,
 ) {
   css(btn, {
     backgroundColor: '#fff',
@@ -72,14 +71,5 @@ export function addStyles(
       '0 0.5em 1em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02)',
     color: '#4a4a4a',
     display: 'block',
-  });
-
-  css(acModalClose, {
-    position: 'absolute',
-    backgroundColor: 'transparent',
-    borderColor: 'transparent',
-    color: '#74818D',
-    fontSize: '22px',
-    cursor: 'pointer',
   });
 }

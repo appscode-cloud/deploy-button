@@ -12,7 +12,6 @@ export function initialize(ref) {
         <iframe class="ac-iframe" src="http://deploy.bb.test:5994/?product=kubedb&owner=system-admin" width="100%" ></iframe>
       </div>
     </div>
-    <button class="ac-bb-modal-close">X</button>
   </div>`;
 
   // catch all the elements
@@ -28,12 +27,10 @@ export function initialize(ref) {
   const vh = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
   acIframe.style.height = `calc(100vh - ${vh * 0.185}px)`;
 
-  const acModalClose = document.querySelector('.ac-bb-modal-close');
-  // const acModalIframe = document.querySelector(".ac-iframe");
 
   // add functionality
-  addEventListeners(btn, acModal, acModalBox, acModalClose);
+  addEventListeners(btn, acModal);
 
   // add styles
-  addStyles(btn, btnIcon, acModal, acModalBg, acModalContent, acModalBox, acModalClose);
+  addStyles(btn, btnIcon, acModal, acModalBg, acModalContent, acModalBox);
 }
