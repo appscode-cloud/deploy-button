@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import { addStyles } from './styles';
 import {
-  handleButtonMouseEnter, handleButtonMouseLeave, handleButtonClick,
+  handleButtonMouseEnter, handleButtonMouseLeave,
   handleKeyDown, handleIframeMessages,
 } from './event-handlers';
 
@@ -59,8 +59,6 @@ export function initialize(ref, conf) {
   btn.addEventListener('mouseleave', (e) => { handleButtonMouseLeave(e, btn); });
   // add event listener to listen to iframe messages
   window.addEventListener('message', (e) => { handleIframeMessages(e, btn, acModal); });
-  // add event listener to handle button click event
-  el.addEventListener('click', (e) => { handleButtonClick(e, acModal); });
   // add event listener to handle keydown event
   btn.addEventListener('keydown', (e) => { handleKeyDown(e, acModal); });
 }

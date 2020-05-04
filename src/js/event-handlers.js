@@ -13,11 +13,6 @@ export function handleButtonMouseLeave(e, btn) {
   css(btn, { cursor: 'default' });
 }
 
-export function handleButtonClick(e, acModal) {
-  e.preventDefault();
-  css(acModal, { display: 'flex' });
-}
-
 export function handleKeyDown(e, acModal) {
   e.preventDefault();
 
@@ -28,7 +23,15 @@ export function handleKeyDown(e, acModal) {
 }
 
 function goToLoginPage(e, loginUrl) {
+  e.preventDefault();
+
   window.open(loginUrl, '_blank');
+}
+
+function openModal(e, acModal) {
+  e.preventDefault();
+
+  css(acModal, { display: 'flex' });
 }
 
 function handleLoggedOutUser(btn, loginUrl) {
@@ -46,6 +49,10 @@ function handleLoggedOutUser(btn, loginUrl) {
 
   // add event listener to button to go to new window
   btn.addEventListener('click', (e) => { goToLoginPage(e, loginUrl); });
+}
+
+function handleLoggedInUser(btn, acModal) {
+  btn.addEventListener('click', (e) => { openModal(e, acModal); });
 }
 
 export function handleIframeMessages(e, btn, acModal) {
@@ -70,6 +77,9 @@ export function handleIframeMessages(e, btn, acModal) {
       if (!isLoggedIn) {
         // user is not logged in
         handleLoggedOutUser(btn, loginUrl);
+      } else {
+        // user is logged in
+        handleLoggedInUser(btn, acModal);
       }
     }
   }
