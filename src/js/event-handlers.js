@@ -27,8 +27,11 @@ export function handleKeyDown(e, acModal) {
   }
 }
 
+function goToLoginPage(e, loginUrl) {
+  window.open(loginUrl, '_blank');
+}
 
-function handleLoggedOutUser(btn) {
+function handleLoggedOutUser(btn, loginUrl) {
   // first show the logged out information in button
   // create a error message
   const erroMessage = document.createElement('span');
@@ -40,6 +43,9 @@ function handleLoggedOutUser(btn) {
   // add error Message content
   erroMessage.innerHTML = `${icon(faExclamationTriangle).html} Need to sign in`;
   btn.prepend(erroMessage);
+
+  // add event listener to button to go to new window
+  btn.addEventListener('click', (e) => { goToLoginPage(e, loginUrl); });
 }
 
 export function handleIframeMessages(e, btn, acModal) {
@@ -50,7 +56,9 @@ export function handleIframeMessages(e, btn, acModal) {
   if (e.origin === 'http://deploy.bb.test:5994') {
     // do this only if the origin is the prefered origin
     const { data } = e;
-    const { type, closeModal, isLoggedIn } = data;
+    const {
+      type, closeModal, isLoggedIn, loginUrl,
+    } = data;
     if (type === 'acModalClose') {
       // modal close event
       if (closeModal) {
@@ -61,7 +69,7 @@ export function handleIframeMessages(e, btn, acModal) {
       // login type event
       if (!isLoggedIn) {
         // user is not logged in
-        handleLoggedOutUser(btn);
+        handleLoggedOutUser(btn, loginUrl);
       }
     }
   }

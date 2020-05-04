@@ -1,13 +1,15 @@
 /* eslint-disable import/prefer-default-export */
 import { addStyles } from './styles';
 import {
-  handleButtonMouseEnter, handleButtonMouseLeave, handleButtonClick, handleKeyDown, handleIframeMessages,
+  handleButtonMouseEnter, handleButtonMouseLeave, handleButtonClick,
+  handleKeyDown, handleIframeMessages,
 } from './event-handlers';
+
+const iFrameDomain = 'http://deploy.bb.test:5994';
 
 const logoUrl = 'https://cdn.appscode.com/images/products/bytebuilders/bytebuilders-512x512.png';
 const buttonHtml = `<button class="ac-bb-modal-button"><img class="ac-bb-modal-button-icon" src="${logoUrl}" alt width="40"/>Deploy with ByteBuilders</button>`;
 
-const iFrameDomain = 'http://deploy.bb.test:5994';
 
 function getModalHtml(domain, conf) {
   // get configuration set by user
