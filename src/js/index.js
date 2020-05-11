@@ -13,10 +13,20 @@ const buttonHtml = `<button class="ac-bb-modal-button"><img class="ac-bb-modal-b
 
 function getModalHtml(domain, conf) {
   // get configuration set by user
-  const { product, owner, productId } = conf;
+  const {
+    chartUrl, chartName, chartVersion, productId, product, owner,
+  } = conf;
 
-  // generate iframe url
-  const url = `${domain}/?${productId ? `product_id=${productId}` : `product=${product}&owner=${owner}`}`;
+  let url = `${domain}/`;
+
+  if (chartUrl) {
+    // uc flwo
+    url += `?chart_url=${chartUrl}&chart_name=${chartName}&chart_version=${chartVersion}`;
+  } else {
+    // up flow
+    url = `${domain}/?${productId ? `product_id=${productId}` : `product=${product}&owner=${owner}`}`;
+  }
+
 
   return `
   <div class="ac-bb-modal">
