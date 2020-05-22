@@ -5,10 +5,10 @@ module.exports = {
   mode: 'production',
   entry: './src/js/index.js',
   output: {
-    path: path.resolve(__dirname, 'public/js'),
-    filename: 'bundle.js',
-    libraryTarget: 'var',
-    library: 'DbbButton',
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bytebuilders-deploy-button.min.js',
+    libraryTarget: 'umd',
+    library: 'BytebuildersDeployButton',
   },
   optimization: {
     minimizer: [new UglifyJsPlugin()],

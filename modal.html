@@ -6,12 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Deploy button</title>
 
-    <script text="javascript" src="./public/js/bundle.js"></script>
+    <script text="javascript" src="./dist/bytebuilders-deploy-button.min.js"></script>
   </head>
   <body>
     <div id="ac-bb-deploy"></div>
     <script>
-      DbbButton.initialize("#ac-bb-deploy", {chartUrl: "https://charts.jetstack.io", chartName: "cert-manager", chartVersion: "v0.12.0"});
+      BytebuildersDeployButton.initialize("#ac-bb-deploy", {chartUrl: "https://charts.jetstack.io", chartName: "cert-manager", chartVersion: "v0.12.0"});
     </script>
   </body>
 </html>
