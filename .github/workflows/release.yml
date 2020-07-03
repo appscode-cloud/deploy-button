@@ -27,5 +27,5 @@ jobs:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
         run: |
           echo "//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN" >> ~/.npmrc
-          npm version ${GITHUB_REF#"refs/tags/"}
+          npm --no-git-tag-version --allow-same-version version ${GITHUB_REF#"refs/tags/"}
           npm publish --access public
