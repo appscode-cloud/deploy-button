@@ -3,6 +3,12 @@ import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 
 import { css } from './styles';
 
+export const iFrameDomain = {
+  local: 'http://deploy.bb.test:5994',
+  dev: 'https://deploy.appscode.ninja',
+  prod: 'https://deploy.byte.builders',
+};
+
 export function handleButtonMouseEnter(e, btn) {
   e.preventDefault();
   css(btn, { cursor: 'pointer' });
@@ -40,7 +46,10 @@ function handleLoggedOutUser(btn, loginUrl) {
   const erroMessage = document.createElement('span');
   // add styles to error message
   css(erroMessage, {
-    color: 'red', display: 'block', fontSize: '14px', fontWeight: '300',
+    color: 'red',
+    display: 'block',
+    fontSize: '14px',
+    fontWeight: '300',
   });
 
   // add error Message content
@@ -48,11 +57,15 @@ function handleLoggedOutUser(btn, loginUrl) {
   btn.prepend(erroMessage);
 
   // add event listener to button to go to new window
-  btn.addEventListener('click', (e) => { goToLoginPage(e, loginUrl); });
+  btn.addEventListener('click', (e) => {
+    goToLoginPage(e, loginUrl);
+  });
 }
 
 function handleLoggedInUser(btn, acModal) {
-  btn.addEventListener('click', (e) => { openModal(e, acModal); });
+  btn.addEventListener('click', (e) => {
+    openModal(e, acModal);
+  });
 }
 
 export function handleIframeMessages(e, btn, acModal) {
@@ -60,7 +73,7 @@ export function handleIframeMessages(e, btn, acModal) {
   // close modal event is fired from iframe using the postMessage API
   // src: https://stackoverflow.com/questions/9153445/how-to-communicate-between-iframe-and-the-parent-site
   // postMessage api : https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage
-  if (e.origin === 'http://deploy.bb.test:5994') {
+  if (Object.values(iFrameDomain).includes(e.origin)) {
     // do this only if the origin is the prefered origin
     const { data } = e;
     const {
